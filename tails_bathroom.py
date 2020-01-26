@@ -14,9 +14,14 @@ s_bathroom = s_full_bathroom - s_door
 
 s_tails = 20 * 44 
 size_tail = input("Введите  размеры плитки (длина х ширина):")
-print(size_tail.split('x'))
-l_tail, w_tail = size_tail.split('x')
-print(f"{int(l_tail) + int(w_tail)}")
+print(size_tail)
+l_tail, w_tail =map(int, size_tail.split('x'))
+print(f"{l_tail + w_tail}")
+
+if l_tail >= 0 and w_tail > 0:
+    s_tails = l_tail * w_tail
+    print(f"Площадь плитки {s_tails} см")
+
 count_tail = round(s_bathroom / s_tails)
 count_tail_backup = count_tail + (count_tail * 0.1)
 
